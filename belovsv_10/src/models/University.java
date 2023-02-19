@@ -7,6 +7,14 @@ public class University {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "University{" +
+                "number=" + number +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public int getNumber() {
         return number;
     }

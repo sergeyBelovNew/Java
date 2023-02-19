@@ -16,7 +16,8 @@ public class Main {
 
     }
 
-    public static String createFillList(){
+    public static String createFillList() {
+        StringBuilder buff = new StringBuilder();
         List <University> universityList = new ArrayList<>();
         Scanner intScanner = new Scanner(System.in);
         Scanner strScanner = new Scanner(System.in);
@@ -25,21 +26,17 @@ public class Main {
             universityList.add(new University(intScanner.nextInt(), strScanner.nextLine()));
         }
         System.out.println("Your date:");
-        for (University iterator:
-                universityList
-        ) {
-            System.out.println(universityList);
-        }
+        System.out.println(universityList);
         return universityList.toString();
     }
 
-    public static void workWithServices(Path file1, Path file2){
+    public static void workWithServices(Path file1, Path file2) {
+        String buff = createFillList();
         Service service = new Service();
         service.creteNewFile(file1);
         service.creteNewFile(file2);
-        service.saveUniversityList(createFillList(), file1);
-        service.readUniversityList(file1);
-        service.copyIntDate(file2);
+        service.saveUniversityList(buff, file1);
+        service.copyIntDate(file2, buff);
     }
 
 }
