@@ -33,4 +33,5 @@ public class University {
 
     private int number;
     private String name;
+
 }
